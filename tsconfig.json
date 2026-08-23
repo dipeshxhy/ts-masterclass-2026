@@ -1,0 +1,47 @@
+{
+  "compilerOptions": {
+    /* Project Structure */
+    "rootDir": "./src",
+    "outDir": "./dist",
+
+    /* JavaScript Environment */
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "lib": ["ESNext", "DOM"],
+
+    /* Type Checking */
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+
+    /* Module Support */
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "verbatimModuleSyntax": true,
+
+    /* Decorators */
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+
+    /* Debugging */
+    "sourceMap": true,
+
+    /* Performance */
+    "incremental": true,
+    "skipLibCheck": true,
+
+    /* Consistency */
+    "forceConsistentCasingInFileNames": true,
+
+    /* Safety */
+    "isolatedModules": true
+    // node
+    //     "module": "NodeNext",
+    // "moduleResolution": "NodeNext",
+    // "lib": ["ESNext"],
+    // "types": ["node"]
+  },
+  "include": ["src"]
+}
