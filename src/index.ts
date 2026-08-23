@@ -1,13 +1,7 @@
-const students = [
-  {
-    name: 'John',
-    score: 70,
-  },
-  {
-    name: 'Mark',
-    score: 90,
-  },
-];
-for (const student of students) {
-  console.log(`Name:${student.name}- Score:${student.score}`);
+//@ts-ignore
+function addNumbers(a, b) {
+  return a + b;
 }
+console.log(addNumbers(2, 10));
+console.log(addNumbers(2, 3));
+console.log(addNumbers(2, '10'));
