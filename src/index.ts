@@ -1,3 +1,13 @@
-console.log('hello world');
-const sum = 2 + 3;
-console.log(sum);
+const students = [
+  {
+    name: 'John',
+    score: 70,
+  },
+  {
+    name: 'Mark',
+    score: 90,
+  },
+];
+for (const student of students) {
+  console.log(`Name:${student.name}- Score:${student.score}`);
+}
