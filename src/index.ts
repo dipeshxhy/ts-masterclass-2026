@@ -1,19 +1,15 @@
-// bigint
+let id = Symbol('id');
 
-const safeInt = Number.MAX_SAFE_INTEGER;
+let alphabeticId = Symbol('id');
 
-console.log(safeInt);
-
-const safeIntPlusOne = safeInt + 1;
-const safeIntPlusTwo = safeInt + 2;
-
-console.log(safeIntPlusOne);
-console.log(safeIntPlusTwo);
-
-const bigIntPlusOne = BigInt(safeInt) + BigInt(1);
-const bigIntPlusTwo = BigInt(safeInt) + BigInt(2);
-
-console.log(bigIntPlusOne);
-console.log(bigIntPlusTwo);
-
-let f = Math.log(10);
+let user = {
+  [id]: 1,
+  name: 'Mark',
+  getId() {
+    return this[id];
+  },
+};
+console.log(user.name);
+// console.log(user['id']);
+console.log(id);
+console.log(user.getId());
