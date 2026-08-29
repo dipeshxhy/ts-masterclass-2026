@@ -1,6 +1,7 @@
-function addNumbers(a: number, b: number) {
-  return a + b;
+let firstName: string = 'Mark';
+firstName = 123;
+firstName = [];
+
+function returnParams(param) {
+  return param;
 }
-console.log(addNumbers(2, 10));
-console.log(addNumbers(2, 3));
-console.log(addNumbers(2, 10));
