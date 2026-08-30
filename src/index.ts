@@ -1,7 +1,18 @@
-type CustomString = string;
+// union types
+// combine two types together its union type
+type StringOrNumber = string | number;
+type NumberOrUndefined = number | undefined;
+type StringOrNumberOrUndefined = StringOrNumber | undefined;
+type DateOrUndefined = Date | undefined;
 
-function addNumbers(a: number, b: number) {
-  return a + b;
+let stringOrNumber: StringOrNumber = 123;
+
+function print(input?: string) {
+  if (input === undefined) {
+    console.log('No input provided');
+  } else {
+    console.log(input);
+  }
 }
-// inference
-let finalResult = addNumbers(5, 10);
+print('Hello, World!');
+print();
