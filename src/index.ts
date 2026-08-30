@@ -1,10 +1,7 @@
-function multiplyByTwo(number: unknown) {
-  if (typeof number === 'number') {
-    return number * 2;
-  }
-  throw new Error('Input must be a number');
+type CustomString = string;
+
+function addNumbers(a: number, b: number) {
+  return a + b;
 }
-const result = multiplyByTwo(5);
-// const result2 = multiplyByTwo('5'); // This will throw an error
-console.log(result);
-// console.log(result2);
+// inference
+let finalResult = addNumbers(5, 10);
