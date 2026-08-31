@@ -1,9 +1,17 @@
-// object
-let person = {
-  name: 'Mark',
-  age: 32,
+type Post = {
+  title: string;
+  content: string;
+  date: Date;
+  category?: string;
 };
-let car: { brand: string; color: string } = {
-  brand: 'BMW',
-  color: 'Black',
+let post: Post = {
+  title: 'This is a blog post',
+  content: 'content of the post',
+  date: new Date(),
+};
+let post2: Post = {
+  title: 'This is a blog post',
+  content: 'content of the post',
+  date: new Date(),
+  category: 'AI',
 };
