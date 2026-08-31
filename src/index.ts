@@ -1,12 +1,18 @@
-type check = any extends unknown ? true : false;
-type check2 = string extends any ? true : false;
-type check3 = undefined extends any ? true : false;
-type check4 = [] extends object ? true : false;
-type check5 = (() => void) extends object ? true : false;
+// type casting
+let firstName = 'Mark';
+let lastName = 'Doe' as const;
 
-const throwError = (message: string): never => {
-  throw new Error(message);
+type User = {
+  name: string;
+  email: string;
 };
 
-let strings = ['a', 'b', 'c'];
-let myFunc = () => 2;
+let user: User = {
+  name: 'Mark',
+  email: 'mark@email.com',
+};
+
+function fetchUser() {
+  return user as User;
+}
+const fetchedUser = fetchUser();
