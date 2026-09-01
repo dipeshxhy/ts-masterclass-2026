@@ -1,41 +1,10 @@
-let a: number[] = [1, 2, 3];
-let b: Array<string> = ['a', 'b', 'c'];
-let c: (string | number | boolean)[] = ['a', 1, 'b', 2, 'c', 3];
-
-type Caterer = {
-  name: string;
-  address: string;
-  phone: number;
-};
-type SeatDetails = {
-  [seatNumber: string]: string; // seat number as key and passenger name as value
-};
-type Airplane = {
-  model: string;
-  flightNumber: string;
-  timeOfDeparture: Date;
-  timeOfArrival: Date;
-  caterer: Caterer;
-  seats: SeatDetails;
-};
-
-let airplane: Airplanes = [
-  {
-    model: 'Airbus A380',
-    flightNumber: 'A2201',
-    timeOfDeparture: new Date(),
-    timeOfArrival: new Date(),
-    caterer: {
-      name: 'Special Food Ltd',
-      address: '484, Some Street, New York',
-      phone: 7867856751,
-    },
-    seats: {
-      A1: 'John Doe',
-      A2: 'Mark Doe',
-      A3: 'Sam Doe',
-    },
-  },
-];
-
-type Airplanes = Airplane[];
+type User = [string, string, number, string?];
+let person: User = ['John', 'Doe', 30, 'Engineer'];
+let user: User = ['Jane', 'Smith', 25];
+let user3: User = ['Alice', 'Johnson', 28, 'Designer'];
+type ListOfStudents = [number, boolean, ...string[]];
+const passingStudents: ListOfStudents = [101, true, 'John', 'Doe', 'Jane', 'Smith'];
+type StringBooleanNumber = [string, ...boolean[], number];
+type BooleanStringNumber = [...boolean[], string, number];
+const example: StringBooleanNumber = ['Hello', true, false, 42];
+const example2: BooleanStringNumber = [true, false, 'World', 100];
