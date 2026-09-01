@@ -1,35 +1,36 @@
-type Dog = {
-  name: string;
-  barks: boolean;
-  wags: boolean;
+type NetworkLoadingState = {
+  state: 'loading';
+};
+type NetworkFailedState = {
+  state: 'failed';
+  code: number;
+};
+type NetworkSuccessState = {
+  state: 'success';
+  response: {
+    title: string;
+    duration: number;
+    summary: string;
+  };
 };
 
-type Cat = {
-  name: string;
-  purrs: boolean;
-};
+type NetworkState = NetworkLoadingState | NetworkFailedState | NetworkSuccessState;
 
-type DogAndCatUnion = Dog | Cat;
-
-let dog: DogAndCatUnion = {
-  name: 'Buddy',
-  barks: true,
-  wags: true,
-};
-let cat: DogAndCatUnion = {
-  name: 'Whiskers',
-  purrs: true,
-};
-
-let hybridAnimal: DogAndCatUnion = {
-  name: 'Fido',
-  barks: true,
-  purrs: true, // This will cause a TypeScript error because 'purrs' is not a property of Dog
-};
-
-let partialDog: DogAndCatUnion = {
-  name: 'Rex',
-  purrs: true, // This will cause a TypeScript error because 'purrs' is not a property of Dog
-  barks: true,
-  wags: true,
-};
+function logger(state: NetworkState) {
+  switch (state.state) {
+    case 'loading':
+      console.log('Loading...');
+      break;
+    case 'failed':
+      console.log(`Failed with code: ${state.code}`);
+      break;
+    case 'success':
+      console.log(
+        `Success! Title: ${state.response.title}, Duration: ${state.response.duration}, Summary: ${state.response.summary}`,
+      );
+      break;
+    default:
+      const _exhaustiveCheck: never = state;
+      throw new Error(`Unhandled state: ${_exhaustiveCheck}`);
+  }
+}
