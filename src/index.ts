@@ -1,10 +1,9 @@
-type User = [string, string, number, string?];
-let person: User = ['John', 'Doe', 30, 'Engineer'];
-let user: User = ['Jane', 'Smith', 25];
-let user3: User = ['Alice', 'Johnson', 28, 'Designer'];
-type ListOfStudents = [number, boolean, ...string[]];
-const passingStudents: ListOfStudents = [101, true, 'John', 'Doe', 'Jane', 'Smith'];
-type StringBooleanNumber = [string, ...boolean[], number];
-type BooleanStringNumber = [...boolean[], string, number];
-const example: StringBooleanNumber = ['Hello', true, false, 42];
-const example2: BooleanStringNumber = [true, false, 'World', 100];
+let number: readonly number[] = [1, 2, 3];
+
+// number.push(4) // Error: Property 'push' does not exist on type 'readonly number[]'.
+type ReadonlyTuple = readonly [number, string, boolean];
+const readonlyTuple: ReadonlyTuple = [42, 'hello', true];
+
+// alternative syntax
+type ReadonlyTupleAlt = Readonly<[number, string, boolean]>;
+const readonlyTupleAlt: ReadonlyTupleAlt = [42, 'hello', true];
