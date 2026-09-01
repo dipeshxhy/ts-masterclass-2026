@@ -2,6 +2,7 @@ type Author = {
   name: string;
   email: string;
   age: number;
+  readonly type: 'human' | 'ai';
 };
 type AwardDetails = {
   name: string;
@@ -26,6 +27,7 @@ let post: Post = {
     name: 'John Doe',
     email: 'john.doe@example.com',
     age: 30,
+    type: 'human',
   },
   awards: {
     web: {
@@ -37,4 +39,18 @@ let post: Post = {
       date: new Date(),
     },
   },
+  category: 'Technology',
+};
+
+let post2: Post = {
+  title: 'This is a blog post',
+  content: 'content of the post',
+  date: new Date(),
+  author: {
+    name: 'John Doe',
+    email: 'john@mail.com',
+    age: 30,
+    type: 'ai',
+  },
+  awards: {},
 };
