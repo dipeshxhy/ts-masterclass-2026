@@ -1,14 +1,10 @@
-async function fetchFromDatabase(id: number) {}
-const anotherAsyncFunction = async () => {};
-
-async function returnString(id: number): Promise<string> {
-  return Promise.resolve('Hello World');
+// rest parameters
+function multiplyBy(by: number, ...numbers: number[]): number[] {
+  return numbers.map((n) => n * by);
 }
-type User = {
-  name: string;
-  age: number;
-};
 
-async function returnUser(id: number): Promise<User> {
-  return Promise.resolve({ name: 'John Doe', age: 30 } as User);
-}
+const result = multiplyBy(2, 1, 2, 3, 4);
+console.log(result); // Output: [2, 4, 6, 8]
+// const args = [0,4] as const
+const args: readonly [number, number] = [0, 4];
+const angle = Math.atan2(...args);
