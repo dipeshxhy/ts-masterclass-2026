@@ -9,44 +9,22 @@ enum Direction {
   Left,
   Right,
 }
-Direction.Up;
-console.log(Direction.Right);
 
-enum Direction2 {
-  Up = 1,
+const enum EDirection {
+  Up,
   Down,
   Left,
   Right,
 }
-Direction2.Up;
-console.log(Direction2.Right);
+let eDirection: EDirection = EDirection.Up;
+let direction: Direction = Direction.Up;
 
-enum Roles {
-  Admin = 'admin',
-  User = 'user',
-  Guest = 'guest',
-}
-Roles.Admin;
-console.log(Roles.Guest);
-
-type Person = {
-  name: string;
-  email: string;
-  password: string;
-  role: Roles;
-};
-
-const person: Person = {
-  name: 'John Doe',
-  email: 'john.doe@example.com',
-  password: 'password123',
-  role: Roles.Admin,
-};
-
-console.log(person);
-
-enum Direction3 {
-  Up = 1,
-  Down = 'down',
-  Left = 3,
-}
+// object
+const ODirection = {
+  Up: 0,
+  Down: 1,
+  Left: 2,
+  Right: 3,
+} as const;
+type ODirection = (typeof ODirection)[keyof typeof ODirection];
+let oDirection: ODirection = ODirection.Up;
