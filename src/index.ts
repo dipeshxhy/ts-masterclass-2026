@@ -1,4 +1,9 @@
-const students = ['Alice', 'Bob', 'Charlie', 'David', 'Eve'];
+function writeToDatabase(value: string) {
+  console.log('writing to database', value);
+}
+function throwError(message: string): never {
+  throw new Error(message);
+}
 
-const studentNames = students.map((std) => console.log(std));
-// console.log(studentNames);
+type check = never extends any ? true : false;
+type check2 = void extends never ? true : false;
