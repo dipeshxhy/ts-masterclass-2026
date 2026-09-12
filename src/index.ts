@@ -1,10 +1,15 @@
-// rest parameters
-function multiplyBy(by: number, ...numbers: number[]): number[] {
-  return numbers.map((n) => n * by);
+type Numbers = {
+  a: number;
+  b: number;
+  c: number;
+};
+let numbers: Numbers = {
+  a: 2,
+  b: 3,
+  c: 4,
+};
+function sum({ a, b, c }: Numbers) {
+  return a + b + c;
 }
-
-const result = multiplyBy(2, 1, 2, 3, 4);
-console.log(result); // Output: [2, 4, 6, 8]
-// const args = [0,4] as const
-const args: readonly [number, number] = [0, 4];
-const angle = Math.atan2(...args);
+console.log(sum(numbers));
+console.log(sum({ a: 3, b: 4, c: 10 }));
