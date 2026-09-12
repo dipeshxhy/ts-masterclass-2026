@@ -1,10 +1,22 @@
-function intro(name: string, age: number, country?: string): string {
-  if (country) {
-    return `Hello, my name is ${name}, I am ${age} years old, and I am from ${country}.`;
-  }
-  return `Hello, my name is ${name} and I am ${age} years old.`;
-}
+type Person = {
+  name: string;
+  age: number;
+  ageUnit: 'years' | 'months' | 'days';
+};
+const person: Person = {
+  name: 'Scout',
+  age: 30,
+  ageUnit: 'years',
+};
 
-// intro('Alice', 30);
-intro('Bob', 25, 'USA');
-intro('Charlie', 40);
+function convertAgeToMonths(person: Person): Person {
+  if (person.ageUnit === 'years') {
+    return {
+      ...person,
+      age: person.age * 12,
+      ageUnit: 'months',
+    };
+  }
+  return person;
+}
+console.log(convertAgeToMonths(person));
