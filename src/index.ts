@@ -1,30 +1,10 @@
-const STATUS_LOADING = 'loading';
-const STATUS_SUCCESS = 'success';
-const STATUS_ERROR = 'error';
-
-// enums
-enum Direction {
-  Up,
-  Down,
-  Left,
-  Right,
+enum AccessPermissions {
+  None = 0,
+  Read = 1,
+  Write = 2,
+  ReadWrite = Read + Write,
+  Delete = 4,
+  All = Read + Write + Delete,
 }
-
-const enum EDirection {
-  Up,
-  Down,
-  Left,
-  Right,
-}
-let eDirection: EDirection = EDirection.Up;
-let direction: Direction = Direction.Up;
-
-// object
-const ODirection = {
-  Up: 0,
-  Down: 1,
-  Left: 2,
-  Right: 3,
-} as const;
-type ODirection = (typeof ODirection)[keyof typeof ODirection];
-let oDirection: ODirection = ODirection.Up;
+console.log(AccessPermissions.ReadWrite);
+console.log(AccessPermissions.All);
